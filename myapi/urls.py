@@ -25,6 +25,7 @@ router.register(r'users', UserViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('demomvc/', include('demomvc.urls')),
     path('admin/', admin.site.urls),
+    path('demomvc/', include('demomvc.urls')),
+    path('products/', include('example.urls')),
 ]
