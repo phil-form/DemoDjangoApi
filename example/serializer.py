@@ -2,7 +2,7 @@ from rest_framework import serializers
 
 from example.models import ProductExample
 
-class ProductExampleSerializer(serializers.Serializer):
+class ProductExampleFormSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
     name = serializers.CharField(max_length=100)
     description = serializers.CharField()
@@ -20,7 +20,7 @@ class ProductExampleSerializer(serializers.Serializer):
         instance.save()
         return instance
     
-class ProductExampleModelSerializer(serializers.ModelSerializer):
+class ProductExampleDTOSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProductExample
         fields = '__all__'
